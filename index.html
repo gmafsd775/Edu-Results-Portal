@@ -7,24 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --success: #27ae60;
-            --warning: #f39c12;
-            --info: #17a2b8;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-success: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 15px 50px rgba(0, 0, 0, 0.15);
-            --border-radius: 12px;
-            --transition: all 0.3s ease;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -33,341 +15,186 @@
         }
 
         body {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: var(--dark);
-            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             min-height: 100vh;
+            padding: 20px;
         }
 
         .container {
-            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 1.2rem 0;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo i {
-            font-size: 2.2rem;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 10px;
-            border-radius: 50%;
-        }
-
-        .logo h1 {
-            font-size: 1.6rem;
-            font-weight: 700;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            padding: 8px 12px;
-            border-radius: 6px;
-        }
-
-        nav a:hover {
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .hero {
-            background: var(--gradient-primary), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 5rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-            opacity: 0.9;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--gradient-secondary);
-            color: white;
-            padding: 14px 30px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: var(--transition);
-            text-align: center;
-            box-shadow: var(--shadow);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .btn-block {
-            display: block;
-            width: 100%;
-        }
-
-        .btn-primary {
-            background: var(--gradient-primary);
-        }
-
-        .btn-secondary {
-            background: var(--gradient-secondary);
-        }
-
-        .btn-success {
-            background: var(--gradient-success);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid white;
-        }
-
-        .form-section {
-            padding: 4rem 0;
         }
 
         .form-container {
             background: white;
-            border-radius: var(--border-radius);
-            padding: 3rem;
-            box-shadow: var(--shadow-lg);
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .form-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: var(--gradient-primary);
-        }
-
-        .form-section h2 {
-            text-align: center;
-            margin-bottom: 2.5rem;
-            color: var(--primary);
-            font-size: 2.2rem;
-            position: relative;
-        }
-
-        .form-section h2:after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 5px;
-            background: var(--gradient-primary);
-            margin: 15px auto;
-            border-radius: 5px;
-        }
-
-        .form-group {
-            margin-bottom: 1.8rem;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 0.7rem;
-            font-weight: 600;
-            color: var(--primary);
-            font-size: 1.05rem;
-        }
-
-        .input-with-icon {
-            position: relative;
-        }
-
-        .input-icon {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--secondary);
-            font-size: 1.2rem;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 15px 15px 15px 50px;
-            border: 2px solid #e1e5ee;
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: var(--transition);
-            background: #f8f9fa;
-        }
-
-        input:focus, select:focus {
-            border-color: var(--secondary);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-            background: white;
-        }
-
-        .button-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 2rem;
-        }
-
-        .results-section {
-            padding: 4rem 0;
-            display: none;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            color: #333;
+            margin-bottom: 20px;
         }
 
         .results-container {
             background: white;
-            border-radius: var(--border-radius);
-            padding: 3rem;
-            box-shadow: var(--shadow-lg);
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            color: #333;
+            display: none;
         }
 
-        .results-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: var(--gradient-success);
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
         }
 
-        .results-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2.5rem;
-            flex-wrap: wrap;
-            gap: 15px;
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
         }
 
-        .results-header h2 {
-            color: var(--primary);
-            font-size: 2rem;
+        h3 {
+            color: #2c3e50;
+            margin: 25px 0 15px 0;
         }
 
-        .status-badge {
-            background: var(--gradient-success);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 50px;
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
             font-weight: 600;
-            font-size: 0.9rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            color: #2c3e50;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e5ee;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            border-color: #667eea;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .btn {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-block {
+            width: 100%;
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .btn-info {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+        }
+
+        .alert {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .alert-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .alert-info {
+            background: #d1ecf1;
+            color: #0c5460;
+            border: 1px solid #bee5eb;
+        }
+
+        .debug-panel {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 14px;
+            display: none;
+            max-height: 300px;
+            overflow-y: auto;
         }
 
         .student-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
-            padding: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+            padding: 20px;
             background: #f8f9fa;
-            border-radius: var(--border-radius);
+            border-radius: 10px;
         }
 
         .info-item {
-            display: flex;
-            flex-direction: column;
+            text-align: center;
         }
 
         .info-label {
             font-weight: 600;
-            color: var(--primary);
+            color: #6c757d;
             font-size: 0.9rem;
             margin-bottom: 5px;
         }
 
         .info-value {
             font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--dark);
-        }
-
-        .results-table-container {
-            overflow-x: auto;
-            border-radius: var(--border-radius);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            font-weight: 700;
+            color: #2c3e50;
         }
 
         .results-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 1rem;
+            margin: 20px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .results-table th {
-            background: var(--gradient-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             padding: 15px;
             text-align: left;
@@ -376,7 +203,7 @@
 
         .results-table td {
             padding: 15px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #e9ecef;
         }
 
         .results-table tr:hover {
@@ -384,234 +211,124 @@
         }
 
         .grade-excellent {
-            color: var(--success);
+            color: #28a745;
             font-weight: 700;
         }
 
         .grade-good {
-            color: var(--secondary);
+            color: #17a2b8;
             font-weight: 700;
         }
 
         .grade-average {
-            color: var(--warning);
-            font-weight: 700;
-        }
-
-        .grade-poor {
-            color: var(--accent);
+            color: #ffc107;
             font-weight: 700;
         }
 
         .summary {
-            margin-top: 2.5rem;
-            padding: 1.5rem;
-            background: #f8f9fa;
-            border-radius: var(--border-radius);
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
         }
 
         .summary-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
             text-align: center;
-            padding: 1rem;
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
         .summary-value {
             font-size: 2rem;
             font-weight: 700;
-            color: var(--primary);
+            color: #667eea;
             margin-bottom: 5px;
         }
 
         .summary-label {
             font-weight: 600;
-            color: var(--dark);
+            color: #6c757d;
             font-size: 0.9rem;
         }
 
-        .chart-section {
-            margin-top: 3rem;
-            padding: 2rem;
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .chart-container {
+        .button-group {
             display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 25px;
             flex-wrap: wrap;
-            gap: 25px;
-            margin-top: 1.5rem;
-        }
-
-        .chart-box {
-            flex: 1;
-            min-width: 300px;
-            height: 320px;
-            padding: 20px;
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .debug-panel {
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: var(--border-radius);
-            padding: 1.5rem;
-            margin-top: 2rem;
-            display: none;
-        }
-
-        .debug-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-
-        .debug-content {
-            font-family: 'Courier New', monospace;
-            font-size: 0.85rem;
-            background: #2c3e50;
-            color: #ecf0f1;
-            padding: 1rem;
-            border-radius: 8px;
-            overflow-x: auto;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        .features {
-            padding: 5rem 0;
-            background: white;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3.5rem;
-            color: var(--primary);
-            font-size: 2.5rem;
-        }
-
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 100px;
-            height: 5px;
-            background: var(--gradient-primary);
-            margin: 15px auto;
-            border-radius: 5px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 2.5rem 2rem;
-            border-radius: var(--border-radius);
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            border-top: 4px solid var(--secondary);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-card h3 {
-            margin-bottom: 1.2rem;
-            color: var(--primary);
-            font-size: 1.4rem;
-        }
-
-        footer {
-            background: var(--primary);
-            color: white;
-            padding: 4rem 0 1.5rem;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-section h3:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--secondary);
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-section a {
-            color: #ddd;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-section a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: #ddd;
         }
 
         .spinner {
-            display: none;
             text-align: center;
-            margin: 2.5rem 0;
+            margin: 20px 0;
+            display: none;
         }
 
         .spinner i {
-            font-size: 3rem;
-            color: var(--secondary);
+            font-size: 2rem;
+            color: #667eea;
             animation: spin 1.5s linear infinite;
+        }
+
+        /* Graph Styles */
+        .graphs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .graph-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #e9ecef;
+        }
+
+        .graph-card h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            font-size: 1.3rem;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+
+        .graph-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .graph-tab {
+            padding: 10px 20px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            color: #6c757d;
+        }
+
+        .graph-tab.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .graph-tab:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
         }
 
         @keyframes spin {
@@ -619,528 +336,247 @@
             100% { transform: rotate(360deg); }
         }
 
-        .alert {
-            padding: 15px 20px;
-            border-radius: var(--border-radius);
-            margin-bottom: 1.5rem;
-            display: none;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .alert i {
-            font-size: 1.5rem;
-        }
-
-        .alert-success {
-            background: #d4edda;
-            color: #155724;
-            border-left: 5px solid var(--success);
-        }
-
-        .alert-error {
-            background: #f8d7da;
-            color: #721c24;
-            border-left: 5px solid var(--accent);
-        }
-
-        .alert-info {
-            background: #d1ecf1;
-            color: #0c5460;
-            border-left: 5px solid var(--info);
-        }
-
-        .alert-warning {
-            background: #fff3cd;
-            color: #856404;
-            border-left: 5px solid var(--warning);
-        }
-
-        .connection-status {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-        }
-
-        .status-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--success);
-        }
-
-        .status-dot.offline {
-            background: var(--accent);
-        }
-
-        .toggle-debug {
-            background: transparent;
-            border: none;
-            color: var(--secondary);
-            cursor: pointer;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-                gap: 10px;
-            }
-
-            .hero h2 {
-                font-size: 2.2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .form-container {
-                padding: 2rem 1.5rem;
-            }
-
-            .results-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .student-info {
-                grid-template-columns: 1fr;
-            }
-
-            .chart-container {
+            .button-group {
                 flex-direction: column;
             }
             
-            .chart-box {
-                min-width: 100%;
+            .btn {
+                width: 100%;
+                margin: 5px 0;
             }
-
-            .summary {
+            
+            .graphs-container {
                 grid-template-columns: 1fr;
+            }
+            
+            .graph-card {
+                padding: 15px;
+            }
+            
+            .chart-container {
+                height: 250px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container header-content">
-            <div class="logo">
-                <i class="fas fa-graduation-cap"></i>
-                <h1>EduResults Portal</h1>
+    <div class="container">
+        <!-- Form Section -->
+        <div class="form-container">
+            <h1>🎓 EduResults Portal</h1>
+            
+            <div class="alert alert-success" id="successAlert">
+                <i class="fas fa-check-circle"></i> ✅ Data successfully sent to n8n!
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#results"><i class="fas fa-poll"></i> Check Results</a></li>
-                    <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
-                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+            
+            <div class="alert alert-error" id="errorAlert">
+                <i class="fas fa-exclamation-circle"></i> ❌ Error sending data to n8n.
+            </div>
 
-    <section class="hero" id="home">
-        <div class="container hero-content">
-            <h2>Academic Excellence Made Accessible</h2>
-            <p>Access student results quickly and securely with our advanced educational platform. Designed for students, parents, and educators.</p>
-            <a href="#results" class="btn btn-outline"><i class="fas fa-arrow-down"></i> Check Results Now</a>
-        </div>
-    </section>
+            <div class="alert alert-info" id="emailAlert" style="display: none;">
+                <i class="fas fa-envelope"></i> 📧 Results will be sent automatically to parent's email!
+            </div>
 
-    <section class="form-section" id="results">
-        <div class="container">
-            <div class="form-container">
-                <h2><i class="fas fa-search"></i> Check Your Results</h2>
-                
-                <div class="alert alert-success" id="successAlert">
-                    <i class="fas fa-check-circle"></i>
-                    <div>
-                        <strong>Success!</strong> Results retrieved successfully!
-                    </div>
+            <form id="resultForm">
+                <div class="form-group">
+                    <label for="studentName"><i class="fas fa-user"></i> Student Full Name</label>
+                    <input type="text" id="studentName" name="studentName" placeholder="Enter student name" required>
                 </div>
                 
-                <div class="alert alert-error" id="errorAlert">
-                    <i class="fas fa-exclamation-circle"></i>
-                    <div>
-                        <strong>Error!</strong> <span id="errorMessage">Unable to retrieve results. Please try again.</span>
-                    </div>
-                </div>
-
-                <div class="alert alert-info" id="infoAlert">
-                    <i class="fas fa-info-circle"></i>
-                    <div id="infoMessage">System ready! Fill the form to check results.</div>
-                </div>
-
-                <div class="alert alert-warning" id="fallbackAlert">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <div>
-                        <strong>Notice:</strong> N8N connection failed. Showing sample data instead.
-                    </div>
+                <div class="form-group">
+                    <label for="studentClass"><i class="fas fa-users"></i> Class</label>
+                    <select id="studentClass" name="studentClass" required>
+                        <option value="">Select Class</option>
+                        <option value="Class 1">Class 1</option>
+                        <option value="Class 2">Class 2</option>
+                        <option value="Class 3">Class 3</option>
+                        <option value="Class 4">Class 4</option>
+                        <option value="Class 5">Class 5</option>
+                        <option value="Class 6">Class 6</option>
+                        <option value="Class 7">Class 7</option>
+                        <option value="Class 8">Class 8</option>
+                        <option value="Class 9">Class 9</option>
+                        <option value="Class 10">Class 10</option>
+                    </select>
                 </div>
                 
-                <form id="resultForm">
-                    <div class="form-group">
-                        <label for="studentName"><i class="fas fa-user"></i> Student Full Name</label>
-                        <div class="input-with-icon">
-                            <i class="fas fa-user input-icon"></i>
-                            <input type="text" id="studentName" name="studentName" placeholder="Enter student's full name" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="studentClass"><i class="fas fa-users"></i> Class</label>
-                        <div class="input-with-icon">
-                            <i class="fas fa-users input-icon"></i>
-                            <select id="studentClass" name="studentClass" required>
-                                <option value="">Select Class</option>
-                                <option value="class1">Class 1</option>
-                                <option value="class2">Class 2</option>
-                                <option value="class3">Class 3</option>
-                                <option value="class4">Class 4</option>
-                                <option value="class5">Class 5</option>
-                                <option value="class6">Class 6</option>
-                                <option value="class7">Class 7</option>
-                                <option value="class8">Class 8</option>
-                                <option value="class9">Class 9</option>
-                                <option value="class10">Class 10</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="examType"><i class="fas fa-file-alt"></i> Exam Type</label>
-                        <div class="input-with-icon">
-                            <i class="fas fa-file-alt input-icon"></i>
-                            <select id="examType" name="examType" required>
-                                <option value="">Select Exam Type</option>
-                                <option value="midterm">Mid-Term Examination</option>
-                                <option value="final">Final Examination</option>
-                                <option value="quarterly">Quarterly Examination</option>
-                                <option value="annual">Annual Examination</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="academicYear"><i class="fas fa-calendar-alt"></i> Academic Year</label>
-                        <div class="input-with-icon">
-                            <i class="fas fa-calendar-alt input-icon"></i>
-                            <select id="academicYear" name="academicYear" required>
-                                <option value="">Select Academic Year</option>
-                                <option value="2023-2024">2023-2024</option>
-                                <option value="2022-2023">2022-2023</option>
-                                <option value="2021-2022">2021-2022</option>
-                            </select>
-                        </div>
-                    </div>
-                    
-                    <div class="button-group">
-                        <button type="submit" class="btn btn-primary btn-block">
-                            <i class="fas fa-download"></i> Get Results
-                        </button>
-                    </div>
+                <div class="form-group">
+                    <label for="examType"><i class="fas fa-file-alt"></i> Exam Type</label>
+                    <select id="examType" name="examType" required>
+                        <option value="">Select Exam Type</option>
+                        <option value="Mid-Term">Mid-Term</option>
+                        <option value="Final">Final</option>
+                        <option value="Annual">Annual</option>
+                    </select>
+                </div>
 
-                    <div class="connection-status">
-                        <span class="status-dot" id="statusDot"></span>
-                        <span id="connectionStatus">Checking connection...</span>
-                    </div>
-                </form>
-
-                <div class="debug-panel" id="debugPanel">
-                    <div class="debug-header">
-                        <h3><i class="fas fa-bug"></i> Debug Information</h3>
-                        <button class="toggle-debug" id="toggleDebug">
-                            <i class="fas fa-times"></i> Close
-                        </button>
-                    </div>
-                    <div class="debug-content" id="debugContent">
-                        <!-- Debug information will appear here -->
-                    </div>
+                <div class="form-group">
+                    <label for="parentEmail"><i class="fas fa-envelope"></i> Parent's Email (Optional)</label>
+                    <input type="email" id="parentEmail" name="parentEmail" placeholder="Enter parent's email address">
+                    <small style="color: #6c757d; font-size: 0.8rem;">Results will be automatically sent to this email via n8n</small>
                 </div>
                 
-                <div class="spinner" id="loadingSpinner">
-                    <i class="fas fa-spinner"></i>
-                    <p>Fetching your results...</p>
-                </div>
+                <button type="submit" class="btn btn-block">
+                    <i class="fas fa-paper-plane"></i> 🚀 Get Student Results
+                </button>
+            </form>
+
+            <div class="spinner" id="loadingSpinner">
+                <i class="fas fa-spinner"></i>
+                <p>Getting results from n8n...</p>
+            </div>
+
+            <div class="debug-panel" id="debugPanel">
+                <strong>Debug Information:</strong>
+                <div id="debugContent"></div>
             </div>
         </div>
-    </section>
 
-    <section class="results-section" id="resultsDisplay">
-        <div class="container">
-            <div class="results-container">
-                <div class="results-header">
-                    <h2><i class="fas fa-award"></i> Academic Results</h2>
-                    <div class="status-badge">
-                        <i class="fas fa-check-circle"></i> Results Verified
-                    </div>
+        <!-- Results Section -->
+        <div class="results-container" id="resultsContainer">
+            <h2><i class="fas fa-award"></i> Student Results</h2>
+            
+            <div class="student-info">
+                <div class="info-item">
+                    <div class="info-label">Student Name</div>
+                    <div class="info-value" id="displayStudentName">-</div>
                 </div>
-                
-                <div class="student-info">
-                    <div class="info-item">
-                        <span class="info-label">Student Name</span>
-                        <span class="info-value" id="displayStudentName">-</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Class/Grade</span>
-                        <span class="info-value" id="displayStudentClass">-</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Exam Type</span>
-                        <span class="info-value" id="displayExamType">-</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">Academic Year</span>
-                        <span class="info-value" id="displayAcademicYear">-</span>
-                    </div>
+                <div class="info-item">
+                    <div class="info-label">Class</div>
+                    <div class="info-value" id="displayStudentClass">-</div>
                 </div>
-                
-                <div class="results-table-container">
-                    <table class="results-table">
-                        <thead>
-                            <tr>
-                                <th>Subject</th>
-                                <th>Marks Obtained</th>
-                                <th>Maximum Marks</th>
-                                <th>Grade</th>
-                                <th>Remarks</th>
-                            </tr>
-                        </thead>
-                        <tbody id="resultsTableBody">
-                        </tbody>
-                    </table>
+                <div class="info-item">
+                    <div class="info-label">Exam Type</div>
+                    <div class="info-value" id="displayExamType">-</div>
                 </div>
-                
-                <div class="summary">
-                    <div class="summary-item">
-                        <div class="summary-value" id="totalMarks">-</div>
-                        <div class="summary-label">Total Marks</div>
-                    </div>
-                    <div class="summary-item">
-                        <div class="summary-value" id="percentage">-</div>
-                        <div class="summary-label">Percentage</div>
-                    </div>
-                    <div class="summary-item">
-                        <div class="summary-value" id="overallGrade">-</div>
-                        <div class="summary-label">Overall Grade</div>
-                    </div>
-                    <div class="summary-item">
-                        <div class="summary-value" id="resultStatus">-</div>
-                        <div class="summary-label">Result Status</div>
-                    </div>
-                </div>
-
-                <div class="chart-section">
-                    <h3><i class="fas fa-chart-bar"></i> Performance Analysis</h3>
-                    <div class="chart-container">
-                        <div class="chart-box">
-                            <canvas id="marksChart"></canvas>
-                        </div>
-                        <div class="chart-box">
-                            <canvas id="gradeDistributionChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="button-group" style="margin-top: 2rem;">
-                    <button class="btn btn-primary" id="printResult">
-                        <i class="fas fa-print"></i> Print Result
-                    </button>
-                    <button class="btn btn-secondary" id="newSearchBtn">
-                        <i class="fas fa-search"></i> New Search
-                    </button>
+                <div class="info-item">
+                    <div class="info-label">Status</div>
+                    <div class="info-value" id="displayStatus">-</div>
                 </div>
             </div>
+
+            <div id="n8nResponseContent">
+                <!-- n8n response will be displayed here -->
+            </div>
+
+            <!-- Graphs Section -->
+            <div id="graphsSection" style="display: none;">
+                <h2><i class="fas fa-chart-bar"></i> Performance Analytics</h2>
+                
+                <div class="graph-tabs">
+                    <div class="graph-tab active" onclick="showGraph('subjectMarks')">Subject Marks</div>
+                    <div class="graph-tab" onclick="showGraph('percentageComparison')">Percentage Comparison</div>
+                    <div class="graph-tab" onclick="showGraph('gradeDistribution')">Grade Distribution</div>
+                    <div class="graph-tab" onclick="showGraph('performanceRadar')">Performance Radar</div>
+                </div>
+
+                <div class="graphs-container">
+                    <div class="graph-card">
+                        <h3><i class="fas fa-chart-bar"></i> Subject-wise Marks</h3>
+                        <div class="chart-container">
+                            <canvas id="subjectMarksChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="graph-card">
+                        <h3><i class="fas fa-percentage"></i> Percentage Comparison</h3>
+                        <div class="chart-container">
+                            <canvas id="percentageChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="graph-card">
+                        <h3><i class="fas fa-star"></i> Grade Distribution</h3>
+                        <div class="chart-container">
+                            <canvas id="gradeChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="graph-card">
+                        <h3><i class="fas fa-bullseye"></i> Performance Radar</h3>
+                        <div class="chart-container">
+                            <canvas id="radarChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn" onclick="printResults()">
+                    <i class="fas fa-print"></i> Print Results
+                </button>
+                <button class="btn btn-info" onclick="toggleGraphs()" id="toggleGraphsBtn">
+                    <i class="fas fa-chart-bar"></i> Show Graphs
+                </button>
+                <button class="btn btn-secondary" onclick="newSearch()">
+                    <i class="fas fa-search"></i> New Search
+                </button>
+            </div>
         </div>
-    </section>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // DOM Elements
             const form = document.getElementById('resultForm');
-            const resultsSection = document.getElementById('resultsDisplay');
-            const loadingSpinner = document.getElementById('loadingSpinner');
             const successAlert = document.getElementById('successAlert');
             const errorAlert = document.getElementById('errorAlert');
-            const infoAlert = document.getElementById('infoAlert');
-            const fallbackAlert = document.getElementById('fallbackAlert');
-            const printButton = document.getElementById('printResult');
-            const newSearchBtn = document.getElementById('newSearchBtn');
+            const emailAlert = document.getElementById('emailAlert');
             const debugPanel = document.getElementById('debugPanel');
             const debugContent = document.getElementById('debugContent');
-            const toggleDebug = document.getElementById('toggleDebug');
-            const statusDot = document.getElementById('statusDot');
-            const connectionStatus = document.getElementById('connectionStatus');
-            const errorMessage = document.getElementById('errorMessage');
-            const infoMessage = document.getElementById('infoMessage');
-            
-            // Chart instances
-            let marksChart = null;
-            let gradeDistributionChart = null;
-            
-            // N8N Webhook URL
-            const N8N_WEBHOOK_URL = 'https://n8n.srv1060272.hstgr.cloud/webhook/result-check';
-            
-            // Initialize the application
-            function init() {
-                // Test connection on load
-                testN8NConnection();
-                
-                // Set up event listeners
-                setupEventListeners();
-                
-                // Show initial info
-                showInfo('System ready! Fill the form to check results from N8N backend.');
-            }
-            
-            // Set up all event listeners
-            function setupEventListeners() {
-                form.addEventListener('submit', handleFormSubmit);
-                printButton.addEventListener('click', handlePrint);
-                newSearchBtn.addEventListener('click', handleNewSearch);
-                toggleDebug.addEventListener('click', toggleDebugPanel);
-            }
-            
-            // Test N8N connection
-            async function testN8NConnection() {
-                try {
-                    const testResponse = await fetch(N8N_WEBHOOK_URL, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({ 
-                            test: true, 
-                            action: 'connection_test',
-                            timestamp: new Date().toISOString()
-                        })
-                    });
-                    
-                    if (testResponse.ok) {
-                        setConnectionStatus(true, 'Connected to NBN Backend');
-                    } else {
-                        setConnectionStatus(false, 'NBN connection failed');
-                    }
-                } catch (error) {
-                    setConnectionStatus(false, 'NBN connection failed');
-                    console.warn('N8N connection test failed:', error);
-                }
-            }
-            
-            // Set connection status UI
-            function setConnectionStatus(connected, message) {
-                if (connected) {
-                    statusDot.classList.remove('offline');
-                    connectionStatus.textContent = message;
-                    connectionStatus.style.color = '#27ae60';
-                } else {
-                    statusDot.classList.add('offline');
-                    connectionStatus.textContent = message;
-                    connectionStatus.style.color = '#e74c3c';
-                }
-            }
-            
-            // Show info alert
-            function showInfo(message) {
-                infoMessage.textContent = message;
-                infoAlert.style.display = 'flex';
-                setTimeout(() => {
-                    infoAlert.style.display = 'none';
-                }, 5000);
-            }
-            
-            // Show debug info
-            function showDebugInfo(message) {
-                debugContent.textContent = message;
-                debugPanel.style.display = 'block';
-            }
-            
-            // Toggle debug panel
-            function toggleDebugPanel() {
-                debugPanel.style.display = debugPanel.style.display === 'block' ? 'none' : 'block';
-            }
-            
-            // Handle form submission
-            async function handleFormSubmit(e) {
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const resultsContainer = document.getElementById('resultsContainer');
+            const n8nResponseContent = document.getElementById('n8nResponseContent');
+            const graphsSection = document.getElementById('graphsSection');
+            const toggleGraphsBtn = document.getElementById('toggleGraphsBtn');
+
+            const N8N_WEBHOOK_URL = 'https://vmi2915475.contaboserver.net/webhook/school-management';
+            let currentResults = null;
+            let parentEmail = '';
+            let charts = {};
+
+            form.addEventListener('submit', async function(e) {
                 e.preventDefault();
                 
-                const formData = {
-                    studentName: document.getElementById('studentName').value,
-                    studentClass: document.getElementById('studentClass').value,
-                    examType: document.getElementById('examType').value,
-                    academicYear: document.getElementById('academicYear').value
-                };
-                
-                if (!formData.studentName || !formData.studentClass || !formData.examType || !formData.academicYear) {
+                const studentName = document.getElementById('studentName').value.trim();
+                const studentClass = document.getElementById('studentClass').value;
+                const examType = document.getElementById('examType').value;
+                parentEmail = document.getElementById('parentEmail').value.trim();
+
+                if (!studentName || !studentClass || !examType) {
                     showError('Please fill all fields');
                     return;
                 }
-                
-                // Reset UI state
-                resetUIState();
+
+                // Reset UI
+                successAlert.style.display = 'none';
+                errorAlert.style.display = 'none';
+                emailAlert.style.display = 'none';
+                resultsContainer.style.display = 'none';
+                graphsSection.style.display = 'none';
+                toggleGraphsBtn.innerHTML = '<i class="fas fa-chart-bar"></i> Show Graphs';
                 loadingSpinner.style.display = 'block';
-                
-                // Try to fetch from N8N
-                const result = await fetchFromN8N(formData);
-                
-                if (result.success) {
-                    // Success - display results from N8N
-                    displayResults(result.data);
-                    successAlert.style.display = 'flex';
-                    fallbackAlert.style.display = 'none';
-                    showInfo('Results retrieved from N8N backend!');
-                } else {
-                    // Show error
-                    showError('Failed to retrieve results from N8N backend. Please try again.');
-                    showDebugInfo(`N8N Error: ${result.error}`);
-                    // Don't show fallback data on error
-                    return;
-                }
-                
-                // Show results section if we have data
-                if (result.success) {
-                    resultsSection.style.display = 'block';
-                    resultsSection.scrollIntoView({ behavior: 'smooth' });
-                }
-                
-                loadingSpinner.style.display = 'none';
-            }
-            
-            // Fetch data from N8N - FIXED VERSION (No body stream error)
-            async function fetchFromN8N(formData) {
-                // Create request data in multiple formats to handle different N8N setups
+
+                // Destroy existing charts
+                destroyCharts();
+
+                // Prepare data for n8n
                 const requestData = {
-                    // Format 1: Simple key-value pairs
-                    studentName: formData.studentName,
-                    studentClass: formData.studentClass,
-                    examType: formData.examType,
-                    academicYear: formData.academicYear,
-                    
-                    // Format 2: Additional metadata
-                    timestamp: new Date().toISOString(),
-                    source: 'EduResults Portal',
-                    action: 'get_results',
-                    
-                    // Format 3: AI Agent compatible
-                    chatInput: `Get results for Student: ${formData.studentName}, Class: ${formData.studentClass}, Exam: ${formData.examType}, Year: ${formData.academicYear}`
+                    "studentName": studentName,
+                    "studentClass": studentClass, 
+                    "examType": examType,
+                    "parentEmail": parentEmail,
+                    "timestamp": new Date().toISOString(),
+                    "action": "get_student_results"
                 };
+
+                console.log('Sending to n8n:', requestData);
                 
+                // Show debug info
+                debugContent.innerHTML = `SENDING DATA:\n${JSON.stringify(requestData, null, 2)}`;
+                debugPanel.style.display = 'block';
+
                 try {
-                    showDebugInfo(`Sending request to N8N: ${N8N_WEBHOOK_URL}\nRequest Data: ${JSON.stringify(requestData, null, 2)}`);
-                    
                     const response = await fetch(N8N_WEBHOOK_URL, {
                         method: 'POST',
                         headers: {
@@ -1148,330 +584,104 @@
                         },
                         body: JSON.stringify(requestData)
                     });
-                    
-                    showDebugInfo(`Response Status: ${response.status} ${response.statusText}`);
-                    
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    
-                    // Clone the response to read it multiple times if needed
-                    const responseClone = response.clone();
-                    
-                    // First try to parse as JSON
-                    let data;
-                    let responseText = '';
-                    
-                    try {
-                        data = await response.json();
-                        showDebugInfo(`Response Data (JSON): ${JSON.stringify(data, null, 2)}`);
-                    } catch (jsonError) {
-                        // If JSON parsing fails, get the text response from the clone
-                        responseText = await responseClone.text();
-                        showDebugInfo(`Response Data (Text): ${responseText}`);
-                        
-                        // Try to parse the text as JSON
-                        try {
-                            data = JSON.parse(responseText);
-                        } catch (e) {
-                            // If it's not JSON, treat it as plain text
-                            data = { text: responseText };
-                        }
-                    }
-                    
-                    // Handle different response formats from N8N
-                    if (data && data.success && data.result) {
-                        return { success: true, data: data.result };
-                    } else if (data && data.response) {
-                        const parsedData = parseAIResponse(data.response, formData);
-                        return { success: true, data: parsedData };
-                    } else if (data && data.text) {
-                        // Handle text response from N8N
-                        const parsedData = parseAIResponse(data.text, formData);
-                        return { success: true, data: parsedData };
-                    } else if (data && data.studentName) {
-                        return { success: true, data: data };
-                    } else if (data && data.message) {
-                        // Handle case where N8N returns a message instead of data
-                        const parsedData = parseAIResponse(data.message, formData);
-                        return { success: true, data: parsedData };
-                    } else {
-                        // If no recognizable format, return error
-                        throw new Error('Unrecognized response format from N8N');
-                    }
-                } catch (error) {
-                    console.error('N8N request failed:', error);
-                    // Return error instead of falling back to sample data
-                    return { success: false, error: error.message };
-                }
-            }
-            
-            // Handle print button
-            function handlePrint() {
-                window.print();
-            }
-            
-            // Handle new search button
-            function handleNewSearch() {
-                resultsSection.style.display = 'none';
-                form.reset();
-                resetUIState();
-                showInfo('Ready for new search. Fill the form to check results from N8N backend.');
-            }
-            
-            // Show error message
-            function showError(message) {
-                errorMessage.textContent = message;
-                errorAlert.style.display = 'flex';
-                setTimeout(() => {
-                    errorAlert.style.display = 'none';
-                }, 5000);
-            }
-            
-            // Reset UI state
-            function resetUIState() {
-                successAlert.style.display = 'none';
-                errorAlert.style.display = 'none';
-                fallbackAlert.style.display = 'none';
-                debugPanel.style.display = 'none';
-            }
-            
-            // Parse AI response - IMPROVED VERSION
-            function parseAIResponse(aiResponse, formData) {
-                console.log("Parsing AI Response:", aiResponse);
-                
-                // Extract student name
-                let studentName = formData.studentName || "Student";
-                const nameMatch = aiResponse.match(/Name:\s*([^\n]+)/i) || 
-                                 aiResponse.match(/Student:\s*([^\n]+)/i) ||
-                                 aiResponse.match(/Name\s*([^\n]+)/i);
-                if (nameMatch) {
-                    studentName = nameMatch[1].trim();
-                }
-                
-                // Extract subjects and marks
-                const subjects = [];
-                
-                // Math
-                const mathMatch = aiResponse.match(/Math:\s*(\d+)\/(\d+)/i) || aiResponse.match(/Mathematics:\s*(\d+)\/(\d+)/i);
-                if (mathMatch) {
-                    const marks = parseInt(mathMatch[1]);
-                    const maxMarks = parseInt(mathMatch[2]);
-                    subjects.push({
-                        name: "Mathematics",
-                        marksObtained: marks,
-                        maxMarks: maxMarks,
-                        grade: calculateGrade(marks/maxMarks * 100),
-                        remarks: getRemarks(marks/maxMarks * 100)
-                    });
-                }
-                
-                // English
-                const englishMatch = aiResponse.match(/English:\s*(\d+)\/(\d+)/i);
-                if (englishMatch) {
-                    const marks = parseInt(englishMatch[1]);
-                    const maxMarks = parseInt(englishMatch[2]);
-                    subjects.push({
-                        name: "English",
-                        marksObtained: marks,
-                        maxMarks: maxMarks,
-                        grade: calculateGrade(marks/maxMarks * 100),
-                        remarks: getRemarks(marks/maxMarks * 100)
-                    });
-                }
-                
-                // Urdu
-                const urduMatch = aiResponse.match(/Urdu:\s*(\d+)\/(\d+)/i);
-                if (urduMatch) {
-                    const marks = parseInt(urduMatch[1]);
-                    const maxMarks = parseInt(urduMatch[2]);
-                    subjects.push({
-                        name: "Urdu",
-                        marksObtained: marks,
-                        maxMarks: maxMarks,
-                        grade: calculateGrade(marks/maxMarks * 100),
-                        remarks: getRemarks(marks/maxMarks * 100)
-                    });
-                }
-                
-                // Pak Study
-                const pakStudyMatch = aiResponse.match(/Pak Study:\s*(\d+)\/(\d+)/i) || aiResponse.match(/Pak Study[^:]*:\s*(\d+)\/(\d+)/i);
-                if (pakStudyMatch) {
-                    const marks = parseInt(pakStudyMatch[1]);
-                    const maxMarks = parseInt(pakStudyMatch[2]);
-                    subjects.push({
-                        name: "Pak Study",
-                        marksObtained: marks,
-                        maxMarks: maxMarks,
-                        grade: calculateGrade(marks/maxMarks * 100),
-                        remarks: getRemarks(marks/maxMarks * 100)
-                    });
-                }
-                
-                // Islamiat
-                const islamiatMatch = aiResponse.match(/Islamia:\s*(\d+)\/(\d+)/i) || aiResponse.match(/Islamiat:\s*(\d+)\/(\d+)/i);
-                if (islamiatMatch) {
-                    const marks = parseInt(islamiatMatch[1]);
-                    const maxMarks = parseInt(islamiatMatch[2]);
-                    subjects.push({
-                        name: "Islamiat",
-                        marksObtained: marks,
-                        maxMarks: maxMarks,
-                        grade: calculateGrade(marks/maxMarks * 100),
-                        remarks: getRemarks(marks/maxMarks * 100)
-                    });
-                }
-                
-                // Science (if mentioned)
-                const scienceMatch = aiResponse.match(/Science:\s*(\d+)\/(\d+)/i);
-                if (scienceMatch) {
-                    const marks = parseInt(scienceMatch[1]);
-                    const maxMarks = parseInt(scienceMatch[2]);
-                    subjects.push({
-                        name: "Science",
-                        marksObtained: marks,
-                        maxMarks: maxMarks,
-                        grade: calculateGrade(marks/maxMarks * 100),
-                        remarks: getRemarks(marks/maxMarks * 100)
-                    });
-                }
-                
-                // If no subjects found in the response, return empty array
-                if (subjects.length === 0) {
-                    console.warn("No subjects found in AI response");
-                    return {
-                        studentName: studentName,
-                        class: formData.studentClass.replace('class', 'Class '),
-                        examType: formData.examType,
-                        academicYear: formData.academicYear,
-                        subjects: [],
-                        totalMarks: 0,
-                        percentage: 0,
-                        overallGrade: "N/A",
-                        resultStatus: "No Data"
-                    };
-                }
-                
-                // Calculate totals
-                const totalMarks = subjects.reduce((sum, subject) => sum + subject.marksObtained, 0);
-                const maxTotalMarks = subjects.reduce((sum, subject) => sum + subject.maxMarks, 0);
-                const percentage = maxTotalMarks > 0 ? ((totalMarks / maxTotalMarks) * 100).toFixed(1) : 0;
 
-                return {
-                    studentName: studentName,
-                    class: formData.studentClass.replace('class', 'Class '),
-                    examType: formData.examType,
-                    academicYear: formData.academicYear,
-                    subjects: subjects,
-                    totalMarks: totalMarks,
-                    percentage: percentage,
-                    overallGrade: calculateGrade(percentage),
-                    resultStatus: percentage >= 33 ? "Pass" : "Fail"
-                };
-            }
-            
-            // Calculate grade based on percentage
-            function calculateGrade(percentage) {
-                if (percentage >= 90) return "A+";
-                if (percentage >= 80) return "A";
-                if (percentage >= 70) return "B";
-                if (percentage >= 60) return "C";
-                if (percentage >= 50) return "D";
-                return "F";
-            }
-            
-            // Get remarks based on percentage
-            function getRemarks(percentage) {
-                if (percentage >= 90) return "Outstanding";
-                if (percentage >= 80) return "Excellent";
-                if (percentage >= 70) return "Very Good";
-                if (percentage >= 60) return "Good";
-                if (percentage >= 50) return "Satisfactory";
-                return "Needs Improvement";
-            }
-            
-            // Display results
-            function displayResults(resultData) {
-                console.log("Displaying results:", resultData);
-                
-                // Update student info
-                document.getElementById('displayStudentName').textContent = resultData.studentName;
-                document.getElementById('displayStudentClass').textContent = resultData.class;
-                document.getElementById('displayExamType').textContent = resultData.examType;
-                document.getElementById('displayAcademicYear').textContent = resultData.academicYear;
-                
-                // Update results table
-                const tableBody = document.getElementById('resultsTableBody');
-                tableBody.innerHTML = '';
-                
-                if (resultData.subjects && resultData.subjects.length > 0) {
-                    resultData.subjects.forEach(subject => {
-                        const row = document.createElement('tr');
+                    debugContent.innerHTML += `\n\nRESPONSE STATUS: ${response.status}`;
+                    
+                    if (response.ok) {
+                        let responseData;
+                        const contentType = response.headers.get('content-type');
                         
-                        let gradeClass = '';
-                        if (subject.grade === 'A+' || subject.grade === 'A') {
-                            gradeClass = 'grade-excellent';
-                        } else if (subject.grade === 'B+' || subject.grade === 'B') {
-                            gradeClass = 'grade-good';
-                        } else if (subject.grade === 'C+' || subject.grade === 'C') {
-                            gradeClass = 'grade-average';
+                        if (contentType && contentType.includes('application/json')) {
+                            responseData = await response.json();
+                            debugContent.innerHTML += `\n\nN8N RESPONSE (JSON):\n${JSON.stringify(responseData, null, 2)}`;
                         } else {
-                            gradeClass = 'grade-poor';
+                            responseData = await response.text();
+                            debugContent.innerHTML += `\n\nN8N RESPONSE (TEXT):\n${responseData}`;
                         }
                         
-                        row.innerHTML = `
-                            <td>${subject.name}</td>
-                            <td>${subject.marksObtained}</td>
-                            <td>${subject.maxMarks}</td>
-                            <td class="${gradeClass}">${subject.grade}</td>
-                            <td>${subject.remarks}</td>
-                        `;
+                        successAlert.style.display = 'block';
                         
-                        tableBody.appendChild(row);
-                    });
-                } else {
-                    // Show no data message
-                    const row = document.createElement('tr');
-                    row.innerHTML = `<td colspan="5" style="text-align: center;">No subject data available</td>`;
-                    tableBody.appendChild(row);
+                        // Show email alert if parent email was provided
+                        if (parentEmail) {
+                            emailAlert.style.display = 'block';
+                        }
+                        
+                        // Display the results from n8n
+                        displayN8NResults(responseData, studentName, studentClass, examType);
+                        
+                    } else {
+                        throw new Error(`HTTP ${response.status}`);
+                    }
+                    
+                } catch (error) {
+                    console.error('Error:', error);
+                    errorAlert.style.display = 'block';
+                    debugContent.innerHTML += `\n\n❌ ERROR: ${error.message}`;
+                    
+                    // Show error message instead of demo data
+                    showError('Unable to fetch results from n8n. Please check your connection and try again.');
+                } finally {
+                    loadingSpinner.style.display = 'none';
                 }
+            });
+
+            function displayN8NResults(n8nData, studentName, studentClass, examType) {
+                // Update student info
+                document.getElementById('displayStudentName').textContent = studentName;
+                document.getElementById('displayStudentClass').textContent = studentClass;
+                document.getElementById('displayExamType').textContent = examType;
+
+                // Parse the response
+                const parsedResults = parseN8NResponse(n8nData);
                 
-                // Update summary
-                document.getElementById('totalMarks').textContent = resultData.totalMarks;
-                document.getElementById('percentage').textContent = resultData.percentage + '%';
-                document.getElementById('overallGrade').textContent = resultData.overallGrade;
-                document.getElementById('resultStatus').textContent = resultData.resultStatus;
-                
-                // Create charts if we have data
-                if (resultData.subjects && resultData.subjects.length > 0) {
-                    createCharts(resultData);
+                if (parsedResults && parsedResults.subjects && parsedResults.subjects.length > 0) {
+                    document.getElementById('displayStatus').textContent = 'Real Data from n8n';
+                    currentResults = parsedResults;
+                    displayStructuredResults(parsedResults);
+                    
+                    // Create graphs after a short delay to ensure DOM is ready
+                    setTimeout(() => {
+                        createGraphs(parsedResults);
+                    }, 500);
+                    
+                } else {
+                    // If parsing fails, show raw response with error
+                    let displayText = typeof n8nData === 'string' ? n8nData : JSON.stringify(n8nData, null, 2);
+                    document.getElementById('displayStatus').textContent = 'Data Format Error';
+                    
+                    n8nResponseContent.innerHTML = `<div class="alert alert-error">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Data Format Issue</h3>
+                        <p>The response from n8n could not be parsed. Please check your n8n workflow configuration.</p>
+                        <pre style="background: #f8f9fa; padding: 15px; border-radius: 5px; white-space: pre-wrap; margin-top: 10px;">${displayText}</pre>
+                    </div>`;
+                    
+                    resultsContainer.style.display = 'block';
+                    resultsContainer.scrollIntoView({ behavior: 'smooth' });
                 }
             }
-            
-            // Create charts
-            function createCharts(resultData) {
-                // Destroy existing charts
-                if (marksChart) marksChart.destroy();
-                if (gradeDistributionChart) gradeDistributionChart.destroy();
-                
-                // Prepare data for charts
-                const subjectNames = resultData.subjects.map(subject => subject.name);
-                const marksObtained = resultData.subjects.map(subject => subject.marksObtained);
-                const maxMarks = resultData.subjects.map(subject => subject.maxMarks);
-                
-                const gradeCounts = {
-                    'A+': 0, 'A': 0, 'B+': 0, 'B': 0, 'C': 0, 'D': 0, 'F': 0
+
+            function createGraphs(results) {
+                if (!results.subjects || results.subjects.length === 0) return;
+
+                const subjectNames = results.subjects.map(subject => subject.name);
+                const marksObtained = results.subjects.map(subject => subject.marksObtained);
+                const maxMarks = results.subjects.map(subject => subject.maxMarks);
+                const percentages = results.subjects.map(subject => Math.round(subject.percentage));
+                const grades = results.subjects.map(subject => subject.grade);
+
+                // Colors for charts
+                const colors = {
+                    primary: '#667eea',
+                    success: '#28a745',
+                    warning: '#ffc107',
+                    danger: '#dc3545',
+                    info: '#17a2b8',
+                    secondary: '#6c757d'
                 };
-                
-                resultData.subjects.forEach(subject => {
-                    if (gradeCounts[subject.grade] !== undefined) {
-                        gradeCounts[subject.grade]++;
-                    }
-                });
-                
-                // Create marks chart
-                const marksCtx = document.getElementById('marksChart').getContext('2d');
-                marksChart = new Chart(marksCtx, {
+
+                // 1. Subject Marks Bar Chart
+                const subjectMarksCtx = document.getElementById('subjectMarksChart').getContext('2d');
+                charts.subjectMarks = new Chart(subjectMarksCtx, {
                     type: 'bar',
                     data: {
                         labels: subjectNames,
@@ -1479,80 +689,496 @@
                             {
                                 label: 'Marks Obtained',
                                 data: marksObtained,
-                                backgroundColor: 'rgba(52, 152, 219, 0.7)',
-                                borderColor: 'rgba(52, 152, 219, 1)',
-                                borderWidth: 1
+                                backgroundColor: colors.primary,
+                                borderColor: colors.primary,
+                                borderWidth: 2
                             },
                             {
                                 label: 'Maximum Marks',
                                 data: maxMarks,
-                                backgroundColor: 'rgba(231, 76, 60, 0.7)',
-                                borderColor: 'rgba(231, 76, 60, 1)',
-                                borderWidth: 1
+                                backgroundColor: colors.secondary,
+                                borderColor: colors.secondary,
+                                borderWidth: 2
                             }
                         ]
                     },
                     options: {
                         responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: Math.max(...maxMarks) + 10,
+                                title: {
+                                    display: true,
+                                    text: 'Marks'
+                                }
+                            }
+                        },
                         plugins: {
                             title: {
                                 display: true,
                                 text: 'Subject-wise Marks Comparison'
                             }
-                        },
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                max: 100
-                            }
                         }
                     }
                 });
-                
-                // Create grade distribution chart
-                const gradeCtx = document.getElementById('gradeDistributionChart').getContext('2d');
-                gradeDistributionChart = new Chart(gradeCtx, {
-                    type: 'pie',
+
+                // 2. Percentage Comparison Chart
+                const percentageCtx = document.getElementById('percentageChart').getContext('2d');
+                charts.percentage = new Chart(percentageCtx, {
+                    type: 'bar',
                     data: {
-                        labels: Object.keys(gradeCounts).filter(grade => gradeCounts[grade] > 0),
+                        labels: subjectNames,
                         datasets: [{
-                            data: Object.values(gradeCounts).filter(count => count > 0),
-                            backgroundColor: [
-                                'rgba(46, 204, 113, 0.7)',
-                                'rgba(52, 152, 219, 0.7)',
-                                'rgba(155, 89, 182, 0.7)',
-                                'rgba(241, 196, 15, 0.7)',
-                                'rgba(230, 126, 34, 0.7)',
-                                'rgba(231, 76, 60, 0.7)'
-                            ],
-                            borderColor: [
-                                'rgba(46, 204, 113, 1)',
-                                'rgba(52, 152, 219, 1)',
-                                'rgba(155, 89, 182, 1)',
-                                'rgba(241, 196, 15, 1)',
-                                'rgba(230, 126, 34, 1)',
-                                'rgba(231, 76, 60, 1)'
-                            ],
-                            borderWidth: 1
+                            label: 'Percentage (%)',
+                            data: percentages,
+                            backgroundColor: percentages.map(p => {
+                                if (p >= 90) return colors.success;
+                                if (p >= 80) return colors.primary;
+                                if (p >= 70) return colors.info;
+                                if (p >= 60) return colors.warning;
+                                return colors.danger;
+                            }),
+                            borderColor: percentages.map(p => {
+                                if (p >= 90) return colors.success;
+                                if (p >= 80) return colors.primary;
+                                if (p >= 70) return colors.info;
+                                if (p >= 60) return colors.warning;
+                                return colors.danger;
+                            }),
+                            borderWidth: 2
                         }]
                     },
                     options: {
                         responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                max: 100,
+                                title: {
+                                    display: true,
+                                    text: 'Percentage (%)'
+                                }
+                            }
+                        },
                         plugins: {
                             title: {
                                 display: true,
-                                text: 'Grade Distribution'
-                            },
-                            legend: {
-                                position: 'bottom'
+                                text: 'Subject-wise Percentage'
                             }
                         }
                     }
                 });
+
+                // 3. Grade Distribution Pie Chart
+                const gradeCount = {};
+                grades.forEach(grade => {
+                    gradeCount[grade] = (gradeCount[grade] || 0) + 1;
+                });
+
+                const gradeCtx = document.getElementById('gradeChart').getContext('2d');
+                charts.grade = new Chart(gradeCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: Object.keys(gradeCount),
+                        datasets: [{
+                            data: Object.values(gradeCount),
+                            backgroundColor: [
+                                colors.success, // A+
+                                colors.primary, // A
+                                colors.info,    // B
+                                colors.warning, // C
+                                colors.danger   // F
+                            ],
+                            borderWidth: 2,
+                            borderColor: '#fff'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom'
+                            },
+                            title: {
+                                display: true,
+                                text: 'Grade Distribution'
+                            }
+                        }
+                    }
+                });
+
+                // 4. Performance Radar Chart
+                const radarCtx = document.getElementById('radarChart').getContext('2d');
+                charts.radar = new Chart(radarCtx, {
+                    type: 'radar',
+                    data: {
+                        labels: subjectNames,
+                        datasets: [{
+                            label: 'Marks Obtained',
+                            data: marksObtained,
+                            backgroundColor: 'rgba(102, 126, 234, 0.2)',
+                            borderColor: colors.primary,
+                            borderWidth: 2,
+                            pointBackgroundColor: colors.primary,
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: colors.primary
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            r: {
+                                beginAtZero: true,
+                                max: Math.max(...maxMarks),
+                                ticks: {
+                                    stepSize: 20
+                                }
+                            }
+                        },
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: 'Overall Performance Radar'
+                            }
+                        }
+                    }
+                });
+
+                // Show first graph by default
+                showGraph('subjectMarks');
             }
-            
-            // Initialize the application
-            init();
+
+            function destroyCharts() {
+                Object.values(charts).forEach(chart => {
+                    if (chart) {
+                        chart.destroy();
+                    }
+                });
+                charts = {};
+            }
+
+            function showGraph(graphType) {
+                // Update active tab
+                document.querySelectorAll('.graph-tab').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                event.target.classList.add('active');
+
+                // Hide all charts first
+                document.querySelectorAll('.chart-container canvas').forEach(canvas => {
+                    canvas.style.display = 'none';
+                });
+
+                // Show selected chart
+                const chartId = graphType + 'Chart';
+                document.getElementById(chartId).style.display = 'block';
+            }
+
+            function toggleGraphs() {
+                const graphsVisible = graphsSection.style.display === 'block';
+                if (graphsVisible) {
+                    graphsSection.style.display = 'none';
+                    toggleGraphsBtn.innerHTML = '<i class="fas fa-chart-bar"></i> Show Graphs';
+                } else {
+                    graphsSection.style.display = 'block';
+                    toggleGraphsBtn.innerHTML = '<i class="fas fa-times"></i> Hide Graphs';
+                    graphsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
+            // ... (Rest of the existing functions remain the same)
+            function parseN8NResponse(responseData) {
+                console.log('Raw response data:', responseData);
+                
+                let resultText = '';
+                
+                // Extract text from different possible response formats
+                if (typeof responseData === 'string') {
+                    resultText = responseData;
+                } else if (responseData.response) {
+                    resultText = responseData.response;
+                } else if (responseData.output) {
+                    resultText = responseData.output;
+                } else if (responseData.text) {
+                    resultText = responseData.text;
+                } else if (responseData.message) {
+                    resultText = responseData.message;
+                } else if (Array.isArray(responseData) && responseData.length > 0) {
+                    // Handle array response format
+                    if (responseData[0].response) {
+                        resultText = responseData[0].response;
+                    } else {
+                        resultText = JSON.stringify(responseData[0]);
+                    }
+                } else if (responseData.results) {
+                    // If already structured data
+                    return responseData.results;
+                } else {
+                    // Try to stringify if it's an object
+                    resultText = JSON.stringify(responseData);
+                }
+                
+                console.log('Extracted text for parsing:', resultText);
+                return parseResultText(resultText);
+            }
+
+            function parseResultText(resultText) {
+                try {
+                    console.log('Original text to parse:', resultText);
+                    
+                    // Clean up the text - preserve newlines for structured parsing
+                    let cleanText = resultText.replace(/\\n/g, '\n')
+                                             .replace(/\\r/g, '')
+                                             .replace(/\\"/g, '"')
+                                             .replace(/\\\//g, '/')
+                                             .replace(/\\\\/g, '')
+                                             .replace(/\\vn/g, '\n') // Handle special newline characters
+                                             .trim();
+                    
+                    console.log('Cleaned text with newlines:', cleanText);
+                    
+                    // Extract student name with multiple patterns
+                    const nameMatch = cleanText.match(/([A-Za-z]+\s+[A-Za-z]+)'s\s+result/i) || 
+                                     cleanText.match(/([A-Za-z]+\s+[A-Za-z]+)\s+from\s+Class/i) ||
+                                     cleanText.match(/([A-Za-z]+\s+[A-Za-z]+)\s+in\s+Class/i);
+                    const studentName = nameMatch ? nameMatch[1].trim() : '';
+                    
+                    console.log('Extracted student name:', studentName);
+                    
+                    // Split by newlines and parse each line
+                    const lines = cleanText.split('\n');
+                    const subjects = [];
+                    let totalMarks = 0;
+                    let marksObtained = 0;
+                    let percentage = 0;
+                    
+                    console.log('Lines to parse:', lines);
+                    
+                    for (let line of lines) {
+                        line = line.trim();
+                        console.log('Processing line:', line);
+                        
+                        // Parse subject lines like "Math: 100/100"
+                        const subjectMatch = line.match(/^([A-Za-z][A-Za-z\s]*):\s*(\d+)\/(\d+)$/);
+                        if (subjectMatch) {
+                            const subjectName = subjectMatch[1].trim();
+                            const subjectMarks = parseInt(subjectMatch[2]);
+                            const subjectMaxMarks = parseInt(subjectMatch[3]);
+                            
+                            if (!isNaN(subjectMarks) && !isNaN(subjectMaxMarks)) {
+                                // Calculate grade based on percentage
+                                const subjectPercentage = (subjectMarks / subjectMaxMarks) * 100;
+                                const grade = calculateGrade(subjectPercentage);
+                                const remarks = getRemarks(grade);
+                                
+                                subjects.push({
+                                    name: subjectName,
+                                    marksObtained: subjectMarks,
+                                    maxMarks: subjectMaxMarks,
+                                    percentage: subjectPercentage,
+                                    grade: grade,
+                                    remarks: remarks
+                                });
+                                
+                                console.log(`Parsed subject: ${subjectName} - ${subjectMarks}/${subjectMaxMarks}`);
+                            }
+                        }
+                        
+                        // Parse total marks
+                        const totalMarksMatch = line.match(/Total\s*Marks:\s*(\d+)/i);
+                        if (totalMarksMatch) {
+                            totalMarks = parseInt(totalMarksMatch[1]);
+                            console.log('Found total marks:', totalMarks);
+                        }
+                        
+                        // Parse marks obtained
+                        const marksObtainedMatch = line.match(/Marks\s*Obtained:\s*(\d+)/i);
+                        if (marksObtainedMatch) {
+                            marksObtained = parseInt(marksObtainedMatch[1]);
+                            console.log('Found marks obtained:', marksObtained);
+                        }
+                        
+                        // Parse percentage
+                        const percentageMatch = line.match(/Percentage:\s*(\d+)%/i);
+                        if (percentageMatch) {
+                            percentage = parseInt(percentageMatch[1]);
+                            console.log('Found percentage:', percentage);
+                        }
+                    }
+                    
+                    console.log('Total subjects parsed:', subjects.length);
+                    
+                    // If total marks not found in specific line, calculate from subjects
+                    if (totalMarks === 0 && subjects.length > 0) {
+                        totalMarks = subjects.reduce((sum, subject) => sum + subject.maxMarks, 0);
+                    }
+                    
+                    // If marks obtained not found in specific line, calculate from subjects
+                    if (marksObtained === 0 && subjects.length > 0) {
+                        marksObtained = subjects.reduce((sum, subject) => sum + subject.marksObtained, 0);
+                    }
+                    
+                    // If percentage not found in specific line, calculate from marks
+                    if (percentage === 0 && totalMarks > 0) {
+                        percentage = Math.round((marksObtained / totalMarks) * 100);
+                    }
+                    
+                    console.log('Final values - Total:', totalMarks, 'Obtained:', marksObtained, 'Percentage:', percentage);
+                    
+                    // Determine overall status
+                    const overallGrade = calculateGrade(percentage);
+                    const status = percentage >= 40 ? 'Pass' : 'Fail';
+                    
+                    const result = {
+                        studentName: studentName,
+                        totalMarks: totalMarks,
+                        marksObtained: marksObtained,
+                        percentage: percentage,
+                        grade: overallGrade,
+                        status: status,
+                        subjects: subjects,
+                        rawResponse: cleanText
+                    };
+                    
+                    console.log('Final parsed result:', result);
+                    return result;
+                    
+                } catch (error) {
+                    console.error('Error parsing result text:', error);
+                    return null;
+                }
+            }
+
+            function calculateGrade(percentage) {
+                if (percentage >= 90) return 'A+';
+                if (percentage >= 80) return 'A';
+                if (percentage >= 70) return 'B';
+                if (percentage >= 60) return 'C';
+                if (percentage >= 50) return 'D';
+                return 'F';
+            }
+
+            function getRemarks(grade) {
+                switch(grade) {
+                    case 'A+': return 'Excellent';
+                    case 'A': return 'Very Good';
+                    case 'B': return 'Good';
+                    case 'C': return 'Average';
+                    case 'D': return 'Below Average';
+                    default: return 'Needs Improvement';
+                }
+            }
+
+            function displayStructuredResults(results) {
+                let html = `
+                    <div class="summary">
+                        <div class="summary-item">
+                            <div class="summary-value">${results.marksObtained}</div>
+                            <div class="summary-label">Marks Obtained</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-value">${results.totalMarks}</div>
+                            <div class="summary-label">Total Marks</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-value">${results.percentage}%</div>
+                            <div class="summary-label">Percentage</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-value">${results.grade}</div>
+                            <div class="summary-label">Grade</div>
+                        </div>
+                    </div>
+                `;
+
+                if (results.subjects && results.subjects.length > 0) {
+                    html += `
+                        <h3><i class="fas fa-book"></i> Subject-wise Marks</h3>
+                        <table class="results-table">
+                            <thead>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Marks Obtained</th>
+                                    <th>Max Marks</th>
+                                    <th>Percentage</th>
+                                    <th>Grade</th>
+                                    <th>Remarks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                    `;
+
+                    results.subjects.forEach(subject => {
+                        const percentage = Math.round(subject.percentage);
+                        const gradeClass = getGradeClass(subject.grade);
+                        html += `
+                            <tr>
+                                <td>${subject.name}</td>
+                                <td>${subject.marksObtained}</td>
+                                <td>${subject.maxMarks}</td>
+                                <td>${percentage}%</td>
+                                <td class="${gradeClass}">${subject.grade}</td>
+                                <td>${subject.remarks}</td>
+                            </tr>
+                        `;
+                    });
+
+                    html += `</tbody></table>`;
+                }
+
+                // Add overall status
+                html += `
+                    <div style="text-align: center; margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 10px;">
+                        <h3 style="color: #2c3e50; margin-bottom: 10px;">Overall Result: <span style="color: ${results.status === 'Pass' ? '#28a745' : '#dc3545'}">${results.status}</span></h3>
+                        <p style="color: #6c757d;">Student has ${results.status === 'Pass' ? 'passed' : 'failed'} with ${results.percentage}%</p>
+                    </div>
+                `;
+
+                n8nResponseContent.innerHTML = html;
+                resultsContainer.style.display = 'block';
+                resultsContainer.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            function getGradeClass(grade) {
+                if (grade === 'A+') return 'grade-excellent';
+                if (grade === 'A') return 'grade-excellent';
+                if (grade === 'B') return 'grade-good';
+                if (grade === 'C') return 'grade-average';
+                return '';
+            }
+
+            function showError(message) {
+                errorAlert.innerHTML = `<i class="fas fa-exclamation-circle"></i> ❌ ${message}`;
+                errorAlert.style.display = 'block';
+            }
+
+            window.printResults = function() {
+                window.print();
+            };
+
+            window.newSearch = function() {
+                resultsContainer.style.display = 'none';
+                graphsSection.style.display = 'none';
+                toggleGraphsBtn.innerHTML = '<i class="fas fa-chart-bar"></i> Show Graphs';
+                form.reset();
+                successAlert.style.display = 'none';
+                errorAlert.style.display = 'none';
+                emailAlert.style.display = 'none';
+                debugPanel.style.display = 'none';
+                currentResults = null;
+                parentEmail = '';
+                destroyCharts();
+            };
+
+            // Expose functions to global scope
+            window.showGraph = showGraph;
+            window.toggleGraphs = toggleGraphs;
         });
     </script>
 </body>
